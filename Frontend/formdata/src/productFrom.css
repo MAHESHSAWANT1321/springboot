@@ -1,0 +1,91 @@
+/* ProductForm.css */
+
+/* Center container */
+.product-form-container {
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px 30px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Heading */
+.product-form-container h2 {
+  text-align: center;
+  color: #1e3a8a;
+  margin-bottom: 20px;
+}
+
+/* Labels */
+.product-form-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Inputs */
+.product-form-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: border-color 0.3s ease;
+}
+
+.product-form-container input:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+/* Submit Button */
+.product-form-container button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.product-form-container button:hover {
+  background-color: #1e40af;
+}
+
+/* Success Message */
+.success-message {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Table styling */
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.product-table th {
+  background-color: #e5e7eb;
+  color: #111827;
+  font-weight: 600;
+}
+
+.product-table tbody tr:hover {
+  background-color: #f3f4f6;
+}
