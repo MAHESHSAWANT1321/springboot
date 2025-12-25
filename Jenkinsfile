@@ -1,11 +1,11 @@
 pipeline {
     agent any
 
-    stages {
 
+    stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/MAHESHSAWANT1321/springboot.git'
+                git url: 'https://github.com/MAHESHSAWANT1321/springboot.git', branch: 'master'
             }
         }
 
@@ -17,7 +17,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'mvn package -DskipTests'
+                bat 'mvn package'
             }
         }
 
@@ -30,10 +30,10 @@ pipeline {
 
     post {
         success {
-            echo "Build SUCCESS 🎉"
+            echo 'BUILD SUCCESS'
         }
         failure {
-            echo "Build FAILED ❌"
+            echo 'BUILD FAILED'
         }
     }
 }
