@@ -44,7 +44,7 @@ const ProductForm = () => {
 
   return (
     <div className="max-w-lg mx-auto mt-10 border rounded-2xl p-5 shadow">
-      <h2 className="text-xl font-bold mb-4">Product Form</h2>
+      <h2 className="text-xl font-bold mb-4">Product Form Detailsssssss</h2>
 
       <form onSubmit={handleSubmit}>
         <label className="block mb-2">Product ID:</label>
