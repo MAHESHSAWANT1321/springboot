@@ -1,16 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        jdk 'JDK17'
-        maven 'Maven3'
-    }
-
-    environment {
-        JAVA_HOME = tool 'JDK17'
-        PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
-    }
-
     stages {
 
         stage('Checkout') {
@@ -19,15 +9,9 @@ pipeline {
             }
         }
 
-        stage('Clean') {
-            steps {
-                sh 'mvn clean'
-            }
-        }
-
         stage('Build') {
             steps {
-                sh 'mvn package -DskipTests'
+                sh 'mvn clean package'
             }
         }
 
@@ -40,10 +24,10 @@ pipeline {
 
     post {
         success {
-            echo "Build Successful 🎉"
+            echo 'Build SUCCESS'
         }
         failure {
-            echo "Build Failed ❌"
+            echo 'Build FAILED'
         }
     }
 }
