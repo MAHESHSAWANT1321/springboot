@@ -1,10 +1,10 @@
 pipeline {
     agent any
 
-    tools {
-        jdk 'JDK17'
-        maven 'Maven3'
-    }
+   JDK:
+     Name: JDK17
+   Maven:
+     Name: Maven3
 
     stages {
         stage('Checkout') {
