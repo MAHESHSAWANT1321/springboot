@@ -7,21 +7,34 @@ pipeline {
     }
 
     stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
         stage('Clean') {
             steps {
-                bat 'mvn clean'
+                dir('Spring From/form-with-mvc/form-with-mvc') {
+                    bat 'mvn clean'
+                }
             }
         }
 
         stage('Build') {
             steps {
-                bat 'mvn package'
+                dir('Spring From/form-with-mvc/form-with-mvc') {
+                    bat 'mvn package'
+                }
             }
         }
 
         stage('Test') {
             steps {
-                bat 'mvn test'
+                dir('Spring From/form-with-mvc/form-with-mvc') {
+                    bat 'mvn test'
+                }
             }
         }
     }
@@ -31,7 +44,7 @@ pipeline {
             echo 'BUILD FINISHED'
         }
         success {
-            echo 'BUILD SUCCESSFUL'
+            echo 'BUILD SUCCESS'
         }
         failure {
             echo 'BUILD FAILED'
