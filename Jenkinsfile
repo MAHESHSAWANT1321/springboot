@@ -27,8 +27,11 @@ pipeline {
     }
 
     post {
+        always {
+            echo 'BUILD FINISHED'
+        }
         success {
-            echo 'BUILD SUCCESS'
+            echo 'BUILD SUCCESSFUL'
         }
         failure {
             echo 'BUILD FAILED'
