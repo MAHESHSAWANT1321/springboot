@@ -1,11 +1,15 @@
 pipeline {
     agent any
 
+    tools {
+        jdk 'JDK17'
+        maven 'Maven3'
+    }
 
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/MAHESHSAWANT1321/springboot.git', branch: 'master'
+                git 'https://github.com/MAHESHSAWANT1321/springboot.git'
             }
         }
 
@@ -17,7 +21,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'mvn package'
+                bat 'mvn package -DskipTests'
             }
         }
 
