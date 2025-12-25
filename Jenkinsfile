@@ -16,7 +16,7 @@ pipeline {
 
         stage('Clean') {
             steps {
-                dir('form-with-mvc') {
+                dir('form-with-mvc/form-with-mvc') {
                     bat 'mvn clean'
                 }
             }
@@ -24,7 +24,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                dir('form-with-mvc') {
+                dir('form-with-mvc/form-with-mvc') {
                     bat 'mvn package'
                 }
             }
@@ -32,7 +32,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                dir('form-with-mvc') {
+                dir('form-with-mvc/form-with-mvc') {
                     bat 'mvn test'
                 }
             }
