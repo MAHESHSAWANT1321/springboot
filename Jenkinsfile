@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    tools {
+        jdk 'JDK17'
+        maven 'Maven3'
+    }
+
     stages {
 
         stage('Checkout') {
@@ -9,25 +14,31 @@ pipeline {
             }
         }
 
+        stage('Clean') {
+            steps {
+                bat 'mvn clean'
+            }
+        }
+
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn package -DskipTests'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
     }
 
     post {
         success {
-            echo 'Build SUCCESS'
+            echo "Build SUCCESS 🎉"
         }
         failure {
-            echo 'Build FAILED'
+            echo "Build FAILED ❌"
         }
     }
 }
